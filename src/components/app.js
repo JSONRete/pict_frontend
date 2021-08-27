@@ -1,5 +1,5 @@
 class App {
     constructor() {
-        this.notes = new Infos()
+        this.infos = new Infos()
     }
-}
+}  

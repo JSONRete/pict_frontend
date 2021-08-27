@@ -16,5 +16,21 @@ input {
 .container {
     width: 30cm;
     margin: auto;
-    margin-top: 2;
+    margin-top: 2cm;
+}
+ul {
+    padding: auto;
+}
+
+
+#new-info-form {
+    display: grid;
+    grid-template: 2fr 1fr;
+    grid-gap: 1cm;
+}
+
+#info-form {
+    display: grid;
+    grid-template: 2fr 1fr;
+    grid-gap: 1cm;
 }

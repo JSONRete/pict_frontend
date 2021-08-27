@@ -5,10 +5,10 @@ class InfoAdapter {
 
 
 
-    // getInfo() {
-    //     return fetch(this.baseUrl).then(res => res.json()
-    //     )
-    // }
+    getInfo() {
+        fetch(this.baseUrl)
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
 
-    // fetch
 }
