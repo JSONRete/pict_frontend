@@ -7,9 +7,8 @@
     
     fetchInfo() {
 
-        debugger
         this.adapter.getInfos().then(infos => {
-           infos.forEach(info => this.infos.push(info))
+        //    infos.forEach(info => this.infos.push(info))
         })
         .then(() => {
             this.render()

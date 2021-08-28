@@ -24,13 +24,3 @@ class InfosAdapter {
 
 }
 
-// getItems(){
-//     fetch(this.baseUrl)
-//     .then(r => r.json())
-//     .then( json => {
-//         json["data"].forEach(element => {
-//             const i = new Item({id: element.id, ...element.attributes})
-//             i.attachToDom()
-//         })
-//     })
-// }
