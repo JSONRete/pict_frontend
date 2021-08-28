@@ -7,13 +7,16 @@
     
     fetchInfo() {
         this.adapter.getInfo().then(infos => {
-            console.log(infos)
+            return console.log(infos)
         })
-     
+        .then(() => {
+            this.render()
+
+        })
     }
 
-//     render() {
-//         const infoContainer = document.getElementById('info-container')
-//         infoContainer.innerHTML = 'my notes here'
-//     }
+    render() {
+        const infoContainer = document.getElementById('info-container')
+        infoContainer.innerHTML = 'my info here'
+    }
  }
