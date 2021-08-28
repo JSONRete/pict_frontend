@@ -11,9 +11,26 @@ class InfosAdapter {
     //     .then(data => console.log(data))
     // }
 
-    getInfo() {
+    getInfos() {
         return fetch(this.baseUrl).then(res => res.json()
+        // .then(json => {
+        //     json["data"].forEach(element => {
+        //         const e = new Infos({id: element.id, ...element.attributes})
+            
+        //     })
+        // })
         )
     }
 
 }
+
+// getItems(){
+//     fetch(this.baseUrl)
+//     .then(r => r.json())
+//     .then( json => {
+//         json["data"].forEach(element => {
+//             const i = new Item({id: element.id, ...element.attributes})
+//             i.attachToDom()
+//         })
+//     })
+// }
