@@ -5,22 +5,23 @@ class InfosAdapter {
 
 
 
-    // getInfo() {
+    // getInfos() {
     //     fetch(this.baseUrl)
     //     .then(res => res.json())
     //     .then(data => console.log(data))
     // }
 
     getInfos() {
-        return fetch(this.baseUrl).then(res => res.json()
-        // .then(json => {
-        //     json["data"].forEach(element => {
-        //         const e = new Infos({id: element.id, ...element.attributes})
-            
-        //     })
-        // })
-        )
+        fetch(this.baseUrl)
+        .then(res => res.json())
+        .then(json => {
+            json["data"].forEach(element => {
+                // const e = new Info({id: element.id, ...element.attributes})
+                // e.render()
+            })
+        })
     }
 
 }
+
 

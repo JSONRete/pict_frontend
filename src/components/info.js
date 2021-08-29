@@ -1,11 +1,10 @@
 class Info {
     constructor(infoJSON) {
-        // this.id = infoJSON.id
-        // this.name = infoJSON.name
-        // this.listId = infoJSON.list_id
+        this.id = infoJSON.id
+        this.name = infoJSON.name
+        this.tempo = infoJSON.tempo
+        this.key = infoJSON.key
+        this.toolId = infoJSON.tool_id
     }
 
-//     renderLi() {
-//         return `<li data-id=${this.id}>${this.name}<li data-id=${this.listId}></li>`
-//     }
 }
