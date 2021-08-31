@@ -1,24 +1,17 @@
 class InfosAdapter {
-    constructor() {
-        this.baseUrl = 'http://127.0.0.1:3000/infos'
+    constructor(port) {
+        this.baseUrl = `${port}/infos`
     }
-
-
-
+        
     getInfos() {
-        return fetch(this.baseUrl).then(response => response.json())
-    
+        fetch(this.baseUrl)
+        .then(res => res.json())
+        .then(json => {
+            json["data"].forEach(element => {
+                const e = new Infos({id: element.id, ...element.attributes})
+                e.putOnDom()
+            })
+        })
     }
-
-    // getInfos() {
-    //     return fetch(this.baseUrl)
-    //     .then(res => res.json())
-    //     .then(json => {
-    //         json["data"].forEach(element => {
-    //             const e = new Info({id: element.id, ...element.attributes})
-    //             e.fetchInfo()
-    //         })
-    //     })
-    // }
-
+    
 }
