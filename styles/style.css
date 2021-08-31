@@ -1,9 +1,13 @@
-body { 
+
+body {
+    background: #ccd3d0 url(/Users/jsonrete/Documents/Projects/school/flatiron/code/pi_ct/pict_frontend/images/451806-200.png) right bottom no-repeat fixed;
+    background-size: 25%;
     font-family: 'Times New Roman', Times, serif;
+    color: #bb0606;
     font-weight: 400;
     line-height: 2cm;
     font-size: x-large;
-}
+  }
 
 a {
     color: dodgerblue;
