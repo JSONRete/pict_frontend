@@ -15,32 +15,44 @@ class Infos {
      
       this.adapter = new InfosAdapter()
   
-      this.li = document.createElement('li')
-      this.li.dataset["id"] = id
-      this.li.id = `infos-${id}`
+      this.div = document.createElement('div')
+      this.div.dataset["id"] = id
+      this.div.id = `infos-${id}`
       
 
       Infos.all.push(this)
   }
 
+    renderInfoCard() {
+    const infoCard = document.createElement('div');
+    infoCard.classList.add('col', 's5', 'info-card');
+
+    const infoContent = this.renderInfoCard()
+    infoCard.appendChild(infoContent)
+
+    Info.infosContainer.appendChild(infoCard);
+  };
+
     render(){
-      this.li.innerHTML = `
+      
+      this.div.classList.add('card-info')
+
+      this.div.innerHTML = `
         <div data-id="${this.id}">
-        SONG TITLE: <strong class="name">${this.name}</strong><br>
+        SONG TITLE: <span class="title">${this.name}</strong><br>
         BPM: <span class="tempo">${this.tempo}</span><br>
         KEY: <span class="key">${this.key}</span>
         </div>
         <button class="edit" data-id="${this.id}">Edit</button>
         <button class="delete" data-id="${this.id}">Delete</button>
       `
-      return this.li
+      return this.div
   }
 
   putOnDom(){
       this.render()
-      infosList.appendChild(this.li)
+      infosCardsList.appendChild(this.div)
 
   }
 
-}  
-
+}
