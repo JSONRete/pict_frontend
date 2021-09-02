@@ -23,8 +23,19 @@ class Infos {
       Infos.all.push(this)
   }
 
-    render(){
 
+
+  renderInfoCard() {
+    const infoCard = document.createElement('div');
+    infoCard.classList.add('col', 's5', 'info-card');
+
+    const infoContent = this.render()
+    infoCard.appendChild(infoContent)
+
+    return this.infosContainer.appendChild(infoCard);
+  }
+
+    render(){
       this.div.classList.add('card-info');
       this.div.innerHTML = `
         <div data-id="${this.id}">
@@ -35,12 +46,12 @@ class Infos {
         <button class="edit" data-id="${this.id}">Edit</button>
         <button class="delete" data-id="${this.id}">Delete</button>
       `
-      return this.li
+      return this.div
   }
 
   putOnDom(){
       this.render()
-      infosCardsList.appendChild(this.div)
+      infosCardsList.appendChild(this.div).renderInfoCard()
 
   }
 
