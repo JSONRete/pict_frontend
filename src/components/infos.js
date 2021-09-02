@@ -22,9 +22,6 @@ class Infos {
 
       Infos.all.push(this)
   }
-
-
-
   
   render(){
     this.div.classList.add('card-info')
