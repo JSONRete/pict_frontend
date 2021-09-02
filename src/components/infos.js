@@ -25,28 +25,22 @@ class Infos {
 
 
 
-  renderInfoCard() {
-    this.div.classList.add('col', 's5', 'info-card');
-    const infoContent = this.render()
-    infoCard.appendChild(infoContent)
-
-    return this.infosContainer.appendChild(infoCard);
+  
+  render(){
+    this.div.classList.add('card-info')
+    this.div.classList.add('col', 's3', 'info-card');
+    this.div.innerHTML = `
+    <div data-id="${this.id}">
+    TITLE: <span class="name">${this.name}</span><br>
+    BPM: <span class="tempo">${this.tempo}</span><br>
+    KEY: <span class="key">${this.key}</span>
+    </div>
+    <button class="edit" data-id="${this.id}">Edit</button>
+    <button class="delete" data-id="${this.id}">Delete</button>
+    `
+    return this.div
   }
-
-    render(){
-      this.div.classList.add('card-info');
-      this.div.innerHTML = `
-        <div data-id="${this.id}">
-        SONG TITLE: <strong class="name">${this.name}</strong><br>
-        BPM: <span class="tempo">${this.tempo}</span><br>
-        KEY: <span class="key">${this.key}</span>
-        </div>
-        <button class="edit" data-id="${this.id}">Edit</button>
-        <button class="delete" data-id="${this.id}">Delete</button>
-      `
-      return this.div
-  }
-
+  
   putOnDom(){
       this.render()
       infosCardsList.appendChild(this.div)
