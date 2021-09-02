@@ -26,9 +26,7 @@ class Infos {
 
 
   renderInfoCard() {
-    const infoCard = document.createElement('div');
-    infoCard.classList.add('col', 's5', 'info-card');
-
+    this.div.classList.add('col', 's5', 'info-card');
     const infoContent = this.render()
     infoCard.appendChild(infoContent)
 
@@ -51,7 +49,7 @@ class Infos {
 
   putOnDom(){
       this.render()
-      infosCardsList.appendChild(this.div).renderInfoCard()
+      infosCardsList.appendChild(this.div)
 
   }
 
