@@ -4,27 +4,24 @@ body {
     background-size: 25%;
     font-family: 'Times New Roman', Times, serif;
     color: #bb0606;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 2cm;
     font-size: x-large;
   }
 
-a {
-    color: dodgerblue;
-}
 
 input {
-    font-size: 1cm;
+    font-size: 1.2rem;
 }
 
 .container {
-    width: 30cm;
+    width: auto;
     margin: auto;
     margin-top: 2cm;
 }
-ul {
+/* ul {
     padding: auto;
-}
+} */
 
 
 #new-info-form {
