@@ -15,18 +15,19 @@ class Infos {
      
       this.adapter = new InfosAdapter()
   
-      this.div = document.createElement('div')
-      this.div.dataset["id"] = id
-      this.div.id = `infos-${id}`
+      this.element = document.createElement('div')
+      this.element.dataset["id"] = id
+      this.element.id = `infos-${id}`
       
+      this.element.addEventListener('submit', this.handleDivClick)
 
       Infos.all.push(this)
   }
   
   render(){
-    this.div.classList.add('card-info')
-    this.div.classList.add('col', 's3', 'info-card');
-    this.div.innerHTML = `
+    this.element.classList.add('card-info')
+    this.element.classList.add('col', 's3', 'info-card');
+    this.element.innerHTML = `
     <div data-id="${this.id}">
     TITLE: <span class="name">${this.name}</span><br>
     BPM: <span class="tempo">${this.tempo}</span><br>
@@ -35,12 +36,12 @@ class Infos {
     <button class="edit" data-id="${this.id}">Edit</button>
     <button class="delete" data-id="${this.id}">Delete</button>
     `
-    return this.div
+    return this.element
   }
   
   putOnDom(){
       this.render()
-      infosCardsList.appendChild(this.div)
+      infoCardsDiv.appendChild(this.element)
 
   }
 
