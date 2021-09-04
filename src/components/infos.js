@@ -63,8 +63,14 @@ class Infos {
    const div = editBtn.parentElement
    const queryDiv = editBtn.parentElement.querySelector('div')
    
-   debugger
- }
+   for (const e of queryDiv.children){
+     let inputValue = e.innerText
+     let name = e.classList[0]
+     e.outerHTML = `<input type="text" id="edit-${name}" value="${inputValue}">`
+   }
+    
+  }
+  
 
 
 
