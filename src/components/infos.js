@@ -19,7 +19,7 @@ class Infos {
       this.element.dataset["id"] = id
       this.element.id = `infos-${id}`
       
-      this.element.addEventListener('submit', this.handleDivClick)
+      this.element.addEventListener('click', this.handleDivClick)
 
       Infos.all.push(this)
   }
@@ -37,7 +37,38 @@ class Infos {
     <button class="delete" data-id="${this.id}">Delete</button>
     `
     return this.element
+
+    // infoCardsDiv.append(this.element)
+    
+    // const deleteBtn = this.element.querySelector('.delete')
+    // deleteBtn.addEventListener('click', this.deleteDiv)
   }
+
+
+
+
+
+
+  handleDivClick = (e) =>{
+    if (e.target.innerText === 'Edit'){
+        e.target.innerText = 'Save' 
+        this.createEditFields(e.target)
+    } else if (e.target.innerText === 'Delete'){
+        deleteDiv(e)
+    } else if (e.target.innerText === 'Save'){
+      e.target.innerText = 'Edit'
+    }
+  }
+ createEditFields = (editBtn) =>{
+   const div = editBtn.parentElement
+   const queryDiv = editBtn.parentElement.querySelector('div')
+   
+   debugger
+ }
+
+
+
+
   
   putOnDom(){
       this.render()

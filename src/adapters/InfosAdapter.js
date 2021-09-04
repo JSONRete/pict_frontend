@@ -38,4 +38,22 @@ class InfosAdapter {
                 d.putOnDom()
         })
     }
+ 
+    deleteDiv = (id) => {
+        const configObj = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            }
+        }
+
+        fetch(`${this.baseUrl}/${id}`, configObj)
+            .then(res => res.json())
+            .then(json => {debugger})
+    
+    }
+
+
 }
+
