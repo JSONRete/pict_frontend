@@ -49,10 +49,32 @@ class InfosAdapter {
         }
 
         fetch(`${this.baseUrl}/${id}`, configObj)
-            .then(res => res.json())
-            .then(json => {debugger})
-    
+            .then(r => r.json())
+            .then(json => alert(json.message))
     }
+
+    patchInfo() {
+
+        const infoValues = {
+            name: nameInput.value,
+            tempo: tempoInput.value,
+            key: keyName.value
+        }
+
+        const configObj = {
+            method: 'patch',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify(infoValues)
+        }
+        
+        fetch(`${this.baseUrl}/${id}`, configObj)
+            .then(res => res.json())
+            .then(json => render(json.data))
+    }
+ 
 
 
 }

@@ -24,29 +24,27 @@ class Infos {
       Infos.all.push(this)
   }
   
+  
+  
   render(){
     this.element.classList.add('card-info')
     this.element.classList.add('col', 's3', 'info-card');
     this.element.innerHTML = `
     <div data-id="${this.id}">
-    TITLE: <span class="name">${this.name}</span><br>
-    BPM: <span class="tempo">${this.tempo}</span><br>
+    TITLE: <span class="name">${this.name}<br></span>
+    BPM: <span class="tempo">${this.tempo}<br></span>
     KEY: <span class="key">${this.key}</span>
     </div>
     <button class="edit" data-id="${this.id}">Edit</button>
     <button class="delete" data-id="${this.id}">Delete</button>
     `
     return this.element
-
-    // infoCardsDiv.append(this.element)
-    
-    // const deleteBtn = this.element.querySelector('.delete')
-    // deleteBtn.addEventListener('click', this.deleteDiv)
   }
 
-
-
-
+  deleteDiv = (e) => {
+    this.element.remove()
+    infosAdapter.deleteDiv(this.id)
+  }
 
 
   handleDivClick = (e) =>{
@@ -54,32 +52,34 @@ class Infos {
         e.target.innerText = 'Save' 
         this.createEditFields(e.target)
     } else if (e.target.innerText === 'Delete'){
-        deleteDiv(e)
+        this.deleteDiv(e)
     } else if (e.target.innerText === 'Save'){
       e.target.innerText = 'Edit'
+        this.saveUpdatedDiv(e.target)
     }
   }
- createEditFields = (editBtn) =>{
-   const div = editBtn.parentElement
-   const queryDiv = editBtn.parentElement.querySelector('div')
-   
-   for (const e of queryDiv.children){
-     let inputValue = e.innerText
-     let name = e.classList[0]
-     e.outerHTML = `<input type="text" id="edit-${name}" value="${inputValue}">`
-   }
-    
+
+  saveUpdatedDiv = (savedBtn) => {
+    const div = savedBtn.parentElement
+    const id = div.dataset.id
+    const nameInput = div.querySelector('.edit-name')
+    const tempoInput = div.querySelector('.edit-tempo')
+    const keyInput = div.querySelector('.edit-key')
   }
-  
 
-
-
-
+  createEditFields = (editBtn) =>{
+    const div = editBtn.parentElement
+    const queryDiv = editBtn.parentElement.querySelector('div')
+    
+    for (const e of queryDiv.children){
+      let inputValue = e.innerText
+      let name = e.classList[0]
+      e.outerHTML = `<input type="text" id="edit-${name}" value="${inputValue}">`
+    }
+  }
   
   putOnDom(){
       this.render()
       infoCardsDiv.appendChild(this.element)
-
   }
-
 } 
