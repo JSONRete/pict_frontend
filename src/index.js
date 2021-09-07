@@ -3,7 +3,7 @@
 
 const port = 'http://localhost:3000'
 const infosAdapter =  new InfosAdapter(port)
-
+const toolsAdapter =  new ToolsAdapter(port)
 
 
 const nameInput = document.getElementById('info-name')
@@ -25,6 +25,7 @@ function handleSubmit(e) {
 }
 
 infosAdapter.getInfos()
+toolsAdapter.getTools()
 
 
 
