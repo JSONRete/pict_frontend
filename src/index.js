@@ -8,7 +8,7 @@ const infosAdapter =  new InfosAdapter(port)
 
 const nameInput = document.getElementById('info-name')
 const tempoInput = document.getElementById('tempo-name')
-const keyName = document.getElementById('key-name')
+const keyInput = document.getElementById('key-name')
 
 
 const infoCardsDiv = document.getElementById('infos-container')

@@ -19,7 +19,7 @@ class InfosAdapter {
         const infoValues = {
             name: nameInput.value,
             tempo: tempoInput.value,
-            key: keyName.value
+            key: keyInput.value
         }
 
         const configObj = {
@@ -53,16 +53,16 @@ class InfosAdapter {
             .then(json => alert(json.message))
     }
 
-    patchInfo() {
-
+    patchInfo = (info) => {
+        let {name, tempo, key} = info
         const infoValues = {
-            name: nameInput.value,
-            tempo: tempoInput.value,
-            key: keyName.value
+            name,
+            tempo,
+            key
         }
 
         const configObj = {
-            method: 'patch',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json'
@@ -70,12 +70,11 @@ class InfosAdapter {
             body: JSON.stringify(infoValues)
         }
         
-        fetch(`${this.baseUrl}/${id}`, configObj)
+        fetch(`${this.baseUrl}/${info.id}`, configObj)
             .then(res => res.json())
-            .then(json => render(json.data))
+            .then(json => { 
+                info.render()
+            })
     }
- 
-
-
 }
 

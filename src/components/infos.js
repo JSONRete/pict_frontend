@@ -49,34 +49,43 @@ class Infos {
 
   handleDivClick = (e) =>{
     if (e.target.innerText === 'Edit'){
-        e.target.innerText = 'Save' 
         this.createEditFields(e.target)
+        e.target.innerText = 'Save' 
     } else if (e.target.innerText === 'Delete'){
         this.deleteDiv(e)
     } else if (e.target.innerText === 'Save'){
-      e.target.innerText = 'Edit'
         this.saveUpdatedDiv(e.target)
+        e.target.innerText = 'Edit'
     }
   }
 
-  saveUpdatedDiv = (savedBtn) => {
-    const div = savedBtn.parentElement
-    const id = div.dataset.id
-    const nameInput = div.querySelector('.edit-name')
-    const tempoInput = div.querySelector('.edit-tempo')
-    const keyInput = div.querySelector('.edit-key')
+  saveUpdatedDiv = () => {
+    // const div = savedBtn.parentElement
+    // const id = div.dataset.id
+    this.name = this.element.querySelector('.edit-name').value
+    this.tempo = this.element.querySelector('.edit-tempo').value
+    this.key = this.element.querySelector('.edit-key').value
+
+    infosAdapter.patchInfo(this)
   }
+
 
   createEditFields = (editBtn) =>{
-    const div = editBtn.parentElement
-    const queryDiv = editBtn.parentElement.querySelector('div')
-    
-    for (const e of queryDiv.children){
-      let inputValue = e.innerText
-      let name = e.classList[0]
-      e.outerHTML = `<input type="text" id="edit-${name}" value="${inputValue}">`
-    }
-  }
+
+        const divData = this.element
+        const div = this.element.querySelector('div')
+
+        const name = divData.querySelector('.name').innerText
+        const tempo = divData.querySelector('.tempo').innerText
+        const key = divData.querySelector('.key').innerText
+        
+      
+        div.innerHTML = `
+        <input type="text" name="name" class="edit-name" value="${name}">
+        <input type="text" step="0.1" name="tempo" class="edit-tempo" value="${tempo}">
+        <input type="text" name="key" class="edit-key" value="${key}">
+        `
+}
   
   putOnDom(){
       this.render()
