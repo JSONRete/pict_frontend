@@ -24,8 +24,6 @@ class Infos {
       Infos.all.push(this)
   }
   
-  
-  
   render(){
     this.element.classList.add('card-info')
     this.element.classList.add('col', 's3', 'info-card');
@@ -86,9 +84,28 @@ class Infos {
         <input type="text" name="key" class="edit-key" value="${key}">
         `
 }
+
+static filterByTool(filteredTool) {
+  if(filteredTool) {
+    const filteredInfos = Infos.all.filter((info) => {
+      return info.toolId === parseInt(filteredTool.id)
+    })
+      Infos.infosContainer.innerHTML = ''
+      for(const info of filteredInfos) {
+        info.appendToDom()
+    }
+    } else {
+
+      Infos.infosContainer.innerHTML = ''
+      for(const info of Infos.all) {
+        info.appendToDom()
+      
+    }
+  }
+}
   
-  putOnDom(){
+  appendToDom(){
       this.render()
       infoCardsDiv.appendChild(this.element)
   }
-} 
+}  

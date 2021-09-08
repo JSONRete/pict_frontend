@@ -9,7 +9,7 @@ class InfosAdapter {
         .then(json => {
             json["data"].forEach(data => {
                 const e = new Infos({id: data.id, ...data.attributes})
-                e.putOnDom()
+                e.appendToDom()
             })
         })
     }
@@ -35,7 +35,7 @@ class InfosAdapter {
             .then(res => res.json())
             .then(json => {
                 const d = new Infos({id: json.data.id, ...json.data.attributes})
-                d.putOnDom()
+                d.appendToDom()
         })
     }
  

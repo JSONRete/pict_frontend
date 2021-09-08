@@ -26,6 +26,21 @@ class Tools {
     addListeners() {
         this.element.addEventListener('click', this.setActiveTool)
     }
+
+    setActiveTool = (e) => {
+        let filteredTool
+        Tools.all.forEach(t => {
+            if (t.element === this.element && !this.active){
+                t.element.classList.add('activated')
+                t.active = true
+                filteredTool = t
+            }else{
+                t.element.classList.remove('activated')
+                t.active = false
+            }
+        })
+        Infos.filterByTool(filteredTool)
+    }
 }
 
 
