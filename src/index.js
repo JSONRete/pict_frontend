@@ -14,6 +14,8 @@ const keyInput = document.getElementById('key-name')
 const infoCardsDiv = document.getElementById('infos-container')
 const form = document.getElementById('info-form')
 
+const select = document.getElementById('tool-select')
+
 
 
 form.addEventListener('submit', handleSubmit)

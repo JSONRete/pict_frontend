@@ -26,8 +26,8 @@ class Infos {
   
   render(){
     this.element.classList.add('card-info')
-    this.element.classList.add('col', 's3', 'info-card');
-    this.element.innerHTML = `
+    this.element.classList.add('col', 's2', 'info-card');
+    this.element.innerHTML = ` 
     <div data-id="${this.id}">
     TITLE: <span class="name">${this.name}<br></span>
     BPM: <span class="tempo">${this.tempo}<br></span>

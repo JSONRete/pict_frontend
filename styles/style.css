@@ -2,65 +2,83 @@
 body {
     background: #ccd3d0 url(/Users/jsonrete/Documents/Projects/school/flatiron/code/pi_ct/pict_frontend/images/451806-200.png) right bottom no-repeat fixed;
     background-size: 25%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif -stem, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #bb0606;
-    font-weight: 700;
-    line-height: 2cm;
+    font-weight: 100;
+    line-height: 1.2cm;
     font-size: x-large;
   }
-
-
-input {
-    font-size: 1.2rem;
-}
-
-.container {
+  
+  .container {
     width: auto;
     margin: auto;
     margin-top: 2cm;
-}
-/* ul {
-    padding: auto;
-} */
-
-
-#new-info-form {
+  }
+  
+  /* #new-info-container {
     display: grid;
     grid-template: 2fr 1fr;
     grid-gap: 1cm;
-}
-
-#info-form {
-    display: grid;
-    grid-template: 2fr 1fr;
-    grid-gap: 1cm;
-}
-
-
-.info-card {
-    margin: 1rem;
-    height: 40rem;
-    background: #f4dede;
-    border-radius: 1rem;
-    opacity: 90%;
-  }
-  
-  .prod-info {
-    padding: 1rem;
-  }
-  
-  .card-info span {
-    font-weight: 700;
-  }
-  
-  .info-title {
+  } */
+  #new-info-container {
     color: #BC4524;
-    font-family: '';
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.7rem;
+    text-align: left;
+  }
+/*   
+  #info-form {
+    display: grid;
+    grid-template: 8ch auto;
+    grid-gap: 1cm;
+  } */
+
+    #info-form {
+    display: grid;
+    grid-template: 1fr 1fr;
+    grid-gap: 1cm;
+  }
+  
+  input {
+    /* font-size: 1.2rem; */
+    color: rgb(58, 158, 96);
+    
     font-size: 1.7rem;
     text-align: center;
   }
   
-  .title {
+  
+  .info-card {
+    margin: 1rem;
+    height: 25rem;
+    background: #f4dede;
+    border-radius: 1rem;
+    opacity: 88%;
+    text-align: left;
+  }
+  
+  .edit-name {
+    color: #ff2222;
+    font-weight: 500;
+    line-height: 1cm;
+    font-size: x-large;
+  }
+
+  .edit-tempo {
+    color: #ff2222;
+    font-weight: 500;
+    line-height: 1cm;
+    font-size: x-large;
+  }
+
+  .edit-key {
+    color: #ff2222;
+    font-weight: 500;
+    line-height: 1cm;
+    font-size: x-large;
+  }
+
+  .name {
     font-weight: 700;
     font-size: 1.2rem;
   }
@@ -69,8 +87,53 @@ input {
     font-weight: 700;
     font-size: 1.2rem;
   }
-
+  
   .key {
     font-weight: 700;
     font-size: 1.2rem;
   }
+
+  .button {
+    fill: indigo;
+  }
+  /* .prod-info {
+    padding: 1rem;
+  }
+  
+  .card-info span {
+    font-weight: 700;
+  } */
+  
+  /* .info-title {
+    color: #BC4524;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.7rem;
+    text-align: center;
+  } */
+  
+  /* ul {
+    padding: auto;
+  } */
+  
+  /* #select-content {
+    max-height: 350px !important;
+    overflow-y: auto !important;
+    backface-visibility: hidden !important;
+  } */
+  /* #tool-select{
+    overflow-y: auto !important;
+  } */
+  /* .tool-select{
+    width: max-content !important;
+    height:auto !important;
+  } */
+  
+  
+    
+  
+  
+    #tools-container {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      
+    }
+    

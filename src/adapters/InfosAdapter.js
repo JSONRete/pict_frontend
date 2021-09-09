@@ -19,9 +19,10 @@ class InfosAdapter {
         const infoValues = {
             name: nameInput.value,
             tempo: tempoInput.value,
-            key: keyInput.value
+            key: keyInput.value,
+            tool_id: select.value
         }
-
+        
         const configObj = {
             method: 'POST',
             headers: {

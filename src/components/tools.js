@@ -21,7 +21,7 @@ class Tools {
     attToDom() {
         Tools.toolsContainer.append(this.render())
         this.addListeners()
-    } 
+     } 
 
     addListeners() {
         this.element.addEventListener('click', this.setActiveTool)
@@ -40,6 +40,13 @@ class Tools {
             }
         })
         Infos.filterByTool(filteredTool)
+    }
+
+    appendToSelect(){
+        const option = document.createElement('option')
+        option.value  = this.id 
+        option.innerText = this.name
+        select.append(option)
     }
 }
 
