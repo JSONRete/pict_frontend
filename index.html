@@ -5,38 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"> -->
+    
+
     <link rel="stylesheet" href="styles/style.css">
     <title>Production Information - Creation Tool</title>
 </head>
 <body>
-        <header class="container">
-          <h1>
-            Production Information - Creation Tool
-          </h1><br>
 
-        </header>
+  <header class="container">
+    <h1>
+      Production Information - Creation Tool
+    </h1><br>
     
-        <main class="container">
-
-            <div id="new-info-container">
-                <form id="info-form">
-                    <label for="info-title">TITLE:</label>
-                    <input type="text" name="name" id="info-name">
-                    <label for="tempo-name">BPM:</label>
-                    <input type="number" step="0.1" name="tempo" id="tempo-name">
-                    <label for="key-name">KEY:</label>
-                    <input type="text" name="key" id="key-name">
-
-                    <label for="tool-select">Tool Select:</label>
-                    <select name="tool_id" id="tool-select">
-                    </select><br>
-                    
-                    <input type="submit" value="PRODUCE:">
-                </form>
-            </div>
-            
-            <h5>Creation Tools:</h5>
-            <div id="tools-container"></div>
+  </header>
+  
+  <main class="container">
+    <div id="new-info-container ">
+      <form id="info-form">
+        <label for="info-title">TITLE:</label>
+        <input type="text" name="name" id="info-name">
+        <label for="tempo-name">BPM:</label>
+        <input type="number" step="0.1" name="tempo" id="tempo-name">
+        <label for="key-name">KEY:</label>
+        <input type="text" name="key" id="key-name">
+        
+        <label for="tool-select">Tool Select:</label>
+        <select name="tool_id" id="tool-select">
+        </select>
+        
+        <input type="submit" value="PRODUCE:">
+      </form>
+    </div>
+    
+    <h5>Creation Tools:</h5>
+    <button id="caps">ALL CAPS</button>
+    <div id="tools-container"></div>
 
           <div id="infos-container" class="row">
           </div>

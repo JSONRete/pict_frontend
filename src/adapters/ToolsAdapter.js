@@ -9,7 +9,7 @@ class ToolsAdapter {
         .then(json => {
             json["data"].forEach(data => {
                 const t = new Tools({id: data.id, ...data.attributes})
-                t.attToDom()
+                t.appendToDom()
                 t.appendToSelect()
             })
         })
