@@ -10,6 +10,8 @@ class InfosAdapter {
             json["data"].forEach(data => {
                 const e = new Infos({id: data.id, ...data.attributes})
                 e.appendToDom()
+                const allCaps = e.name.toUpperCase()
+                e.name = allCaps
             })
         })
     }
@@ -78,4 +80,3 @@ class InfosAdapter {
             })
     }
 }
-

@@ -15,7 +15,6 @@ class Tools {
         Tools.all.push(this)
     }
 
-
     addListeners() {
         this.element.addEventListener('click', this.setActiveTool)
         // console.log

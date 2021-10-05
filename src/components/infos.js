@@ -11,6 +11,7 @@ class Infos {
       this.tempo = tempo
       this.key = key
       this.toolId = tool_id
+
      
       this.adapter = new InfosAdapter()
   
@@ -19,13 +20,23 @@ class Infos {
       this.element.id = `infos-${id}`
       
       this.element.addEventListener('click', this.handleDivClick)
+      this.allCaps = document.getElementById('caps')
+      this.allCaps.addEventListener('click', this.alphaBeta)
+
+  
 
       Infos.all.push(this)
+  }
+
+  alphaBeta = (e) => {
+   const allCaps = this.name.toUpperCase()
+   this.name = allCaps
+  //  console.log(this.name)
   }
   
   render(){
     this.element.innerHTML = ` 
-    <div data-id="${this.id}">
+    <div data-id="${this.id}" data-title="${this.name}">
     TITLE: <span class="name">${this.name}<br></span>
     BPM: <span class="tempo">${this.tempo}<br></span>
     KEY: <span class="key">${this.key}</span>
@@ -110,4 +121,4 @@ class Infos {
       this.cardCssElms()
       firstInfosIndexLoad.appendChild(this.element)
   }
-} 
+}
